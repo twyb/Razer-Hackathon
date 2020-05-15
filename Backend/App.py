@@ -6,7 +6,8 @@ from cheroot import wsgi
 from flask import Blueprint
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, jsonify
 import sqlalchemy as sa
-
+import pandas as pd
+import pprint
 
 # from backend.routes.services import services
 # from Backend.routes.login import twofa
@@ -27,30 +28,35 @@ usrname = credentials["username"]
 pwd = credentials["password"]
 string = credentials["dbString"]
 port = credentials["port"]
-db = credentials["dbName"]
+dbname = credentials["dbName"]
 dbtype = credentials["dbType"]
 
-engine = sa.create_engine(f"{dbtype}://{usrname}:{pwd}@{string}:{port}/{db}")
+engine = sa.create_engine(f"{dbtype}://{usrname}:{pwd}@{string}:{port}/{dbname}")
 conn = engine.connect()
 
 
 sql_query = """SELECT * 
                 FROM razer_hackathon.problem_table"""
 
-sql_result = db.read_sql_query(sql_query, engine)
+sql_df_result = pd.read_sql_query(sql_query, engine)
+# html_result = sql_df_result.to_html()
+
+# json_result = sql_df_result.to_json
+json_result = sql_df_result.to_json(orient='index')
+
 
 # application.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://{master username}:{db password}@{endpoint}/{db instance name}'
 # db = SQLAlchemy(application)
 
-@app.route('/loans', methods = ['GET', 'POST '])
+@app.route('/loans', methods = ['GET', 'POST'])
 def loans():
     # return "Hello World! Hey!"
     return jsonify({"about": "Hello World!"})
 
-@app.route('/problems', methods = ['GET', 'POST '])
+@app.route('/problems', methods = ['GET', 'POST'])
 def problems():
-    # return "Hello World! Hey!"
-    return sql_result
+    # return "Hello World! Hey!"    
+    return json_result
 
 logger = logging.getLogger()
 handler = logging.StreamHandler()
