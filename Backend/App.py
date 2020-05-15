@@ -4,16 +4,17 @@ from flask_cors import CORS, cross_origin
 from backend import app
 from cheroot import wsgi
 from backend.routes.services import services
-from flask import session
+from flask import session, Flask, request
 
 # from Backend.routes.login import twofa
 
-CORS(app)
+app = Flask(__name__)
+cors = CORS(app)
 app.register_blueprint(services)
 
-@app.route('/')
-def default_route():
-    return "Python Template"
+@app.route('/loans')
+def loans():
+    return "Hello World!"
 
 logger = logging.getLogger()
 handler = logging.StreamHandler()
@@ -29,4 +30,4 @@ if __name__ == "__main__":
     # sock.bind(('localhost', 5000))
     # port = sock.getsockname()[1]
     # sock.close()
-    app.run(port=8000, debug=True)
+    app.run(debu = True)
