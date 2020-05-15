@@ -3,14 +3,15 @@ import socket
 from flask_cors import CORS, cross_origin
 from backend import app
 from cheroot import wsgi
-from backend.routes.services import services
-from flask import session, Flask, request
+# from backend.routes.services import services
+from flask import Blueprint
+from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 
 # from Backend.routes.login import twofa
 
 app = Flask(__name__)
 cors = CORS(app)
-app.register_blueprint(services)
+# app.register_blueprint(services)
 
 @app.route('/loans')
 def loans():
@@ -30,4 +31,4 @@ if __name__ == "__main__":
     # sock.bind(('localhost', 5000))
     # port = sock.getsockname()[1]
     # sock.close()
-    app.run(debu = True)
+    app.run(debug = True)
