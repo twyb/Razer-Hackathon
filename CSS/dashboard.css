@@ -32,7 +32,7 @@
 }
 
 .problem-button:hover, .problem-submit:hover, .view-proposal:hover,
-.upload-proposal:hover {
+.upload-proposal:hover, .upload-submit:hover {
     color: #ffffff !important;
     background: #386BF6;
     border-color: #386BF6 !important;

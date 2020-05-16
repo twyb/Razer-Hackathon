@@ -8,6 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SME Digimart</title>
 </head>
+<script>
+    if(sessionStorage.getItem('token') == null){
+   window.location.href = 'index.html';
+}    
+</script>
 <body>
     <div class='main-body'>
         <nav class='navbar'>
