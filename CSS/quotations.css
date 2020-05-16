@@ -339,13 +339,17 @@
     text-align: center;
 }
 
-.calculator-header{
+.calculator-header, .grants-header{
     font-weight: bold;
     letter-spacing: 0;
     line-height: 1.2;
     padding: 0.65em 0 0.2em 0;
     font-size:32px;
     /* color: #386BF6; */
+}
+
+.grants-header{
+    font-size: 28px;
 }
 
 .calculator-total-price-header{
@@ -397,3 +401,43 @@
     border-color: #386BF6 !important;
     transition: all 0.4s ease 0s;
     }
+
+.grant-list-container{
+    width: 900px;
+    display: flex;
+    align-items: stretch;
+    /* justify-content: space-evenly; */
+    margin:auto;
+}
+
+.grants-info-card.selected{
+    border: 2px #386BF6 solid;
+}
+
+.grants-info-card{
+    width: 300px;
+    background-color: #e6edf0;
+    padding: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.grant-logo{
+    width:100%;
+}
+
+.grant-logo>img{
+    width: 100px;
+}
+
+.grants-title, .grants-amount{
+    font-size:20px;
+    font-weight: 400;
+    width:100%;
+    padding: 10px 0;
+}
+
+.grant-eligibility{
+    padding: 10px 0;
+}
+

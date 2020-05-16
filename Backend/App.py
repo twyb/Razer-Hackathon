@@ -9,12 +9,8 @@ import sqlalchemy as sa
 import pandas as pd
 import pprint
 
-# from backend.routes.services import services
-# from Backend.routes.login import twofa
-
 app = Flask(__name__)
 CORS(app)
-# app.register_blueprint(services)
 
 credentials = {
     "username": "admin",
@@ -42,8 +38,10 @@ def home():
 @app.route('/loans', methods = ['GET', 'POST'])
 # @app.route('/loans/LoanID', methods = ['GET', 'POST'])
 def loans():
-    form_info = request.json()
-    # print(form_info)
+    form_info = request.form
+
+    loan_amount = form_info['amount']
+
     loans_table_query = "SELECT * FROM razer_hackathon.loan_details WHERE LoanAmount >= '5000'"
     
     sql_df_loans_result = pd.read_sql_query(loans_table_query, engine)
@@ -55,7 +53,8 @@ def loans():
 
 @app.route('/problems', methods = ['GET', 'POST'])
 def problems():
-    form_info = request.json()
+    form_info = request.form
+
     problem_table_query = "SELECT * FROM razer_hackathon.problem_table WHERE ProblemIndustry = '?'"
 
     sql_df_problem_result = pd.read_sql_query(problem_table_query, engine)
@@ -65,9 +64,15 @@ def problems():
 
 @app.route('/grants', methods = ['GET', 'POST'])
 def grants():
-    sql_df_grants_result = pd.read_sql_query(grants_table_query, engine)
+    form_info = request.form
 
-    grants_table_query = "SELECT * FROM razer_hackathon.grant_details WHERE GrantIndustry = '?' AND EmployeeCount <= '?'"         
+    industry = form_info['industry']
+
+    employee_count = form_info['employee_count']
+
+    grants_table_query = "SELECT * FROM razer_hackathon.grant_details WHERE Industry = '"+ industry +"' AND EmployeeCount <= " + employee_count +"" 
+
+    sql_df_grants_result = pd.read_sql_query(grants_table_query, engine)        
 
     json_grants_result = sql_df_grants_result.to_json(orient='records')
 
