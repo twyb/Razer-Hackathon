@@ -1,0 +1,115 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script><!--Retrieving the Jquery Library-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SME Digimart</title>
+</head>
+<body>
+    <div class='main-body'>
+        <nav class='navbar'>
+            <div class='navbar-items-container'>
+                <div class='cpf-logo-container'>
+                    <a href='member.html'>
+                        <!-- <image class='cpf-logo' src='../Pics/cpf_logo_icon.png'></image> -->
+                    </a>
+                </div>
+                <div class='navbar-menu-items-container'>
+                    <div class='navbar-items'>
+                        <a class='navbar-link' href='#'>
+                            <span>Home</span>
+                        </a>
+                    </div>
+                    <div class='navbar-items'>
+                        <a class='navbar-link' href='#'>
+                            <span>Marketplace</span>
+                        </a>
+                    </div>
+                    <div class='navbar-items'>
+                        <a class='navbar-link' href='#'>
+                            <span >Services</span>
+                        </a>
+                    </div>
+                    <div class='navbar-items'>
+                        <a class='navbar-link' href='#'>
+                            <span >About Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class='main-body-container'>
+            <div class='dashboard-top'> 
+                <div class='dashboard-header'>
+                    Marketplace
+                </div>
+            </div>
+            <div class='sme-dashboard-items-container hide'>
+                <div class='sme-dashboard-item'>
+                    <div class='sme-first-line'>
+                        <div class='item-title'>
+                            Website Revamp
+                        </div>
+                        <div class='problem-button-container'>
+                            <div>
+                                <button id='upload-proposal' class="upload-proposal">Upload Proposal</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='poster-info'>
+                        Dave Wong
+                    </div>
+                    <div class='item-tag-container'>
+                        <div class='item-tag'>
+                            Design & Upgrade
+                        </div>
+                    </div>
+                    <div class='item-description-container'>
+                        Need help to upgrade our website to improve on the user interface and usability.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- The overlay -->
+    <div id="proposal-overlay" class="overlay hide">
+
+        <!-- Button to close the overlay navigation -->
+        <a id='close' href="javascript:void(0)" class="closebtn">&times;</a>
+    
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <div class='problem-container'>
+                <div class='problem-header'>
+                    Upload Proposal
+                </div>
+                <div class='problem-title-container'>
+                    <div class='problem-title-header'>
+                       Price
+                   </div>
+                   <input type='text' class='problem-title'>
+               </div>
+                <div class='problem-description-container'>
+                    <div>
+                        <div class='problem-description-header'>
+                            Problem Description
+                        </div>
+                        <textarea type='text' class='problem-description' cols="40" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class='problem-submit-container'>
+                   <button class='problem-submit'>Submit</button>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    
+<script src='../JS/dashboard.js'></script>
+</html>

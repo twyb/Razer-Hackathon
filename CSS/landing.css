@@ -1,0 +1,97 @@
+.main-page-container{
+    margin: 5% 5% 0px 12.5%;
+    align-items: stretch;
+    display: flex;
+}
+
+.grants-display-container{
+    padding: 10px;
+    background-color: #ffffff;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.grants-header, .profile-header{
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.general-grants-container, .specialized-grants-container{
+    padding: 10px;
+}
+
+.general-grants-header, .specialized-grants-header{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.grant-card-carousel-container{
+    display:flex;
+    align-items: stretch;
+}
+
+.grant-card-container{
+    width: 150px;
+    height: 150px;
+    background-color: #f9f9f9;
+    margin-right: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.grant-card-container:hover {
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+  }
+
+.grant-card-image-container{
+    padding: 20px 0 10px 0;
+    text-align: center;
+}
+
+.grant-card-image-container>img{
+    width: 100px;
+}
+
+.grant-card-caption-container, .name-container{
+    padding: 5px 0 10px 0;
+    text-align: center;
+}
+
+.name-container{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.profile-container{
+    margin-left: 30px;
+    width:30%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.profile-image-container{
+    padding: 20px 0 10px 0;
+    text-align: center;
+}
+
+.profile-image-container>img{
+    border-radius: 50%;
+    width: 200px;  
+}
+
+.company-profile-header{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.industry-container, .head-count-container, .annual-revenue-container,
+.business-model-container, .ownership-container{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 200;
+    padding: 2.5px;
+}

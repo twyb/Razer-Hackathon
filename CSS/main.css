@@ -1,0 +1,66 @@
+body{
+    background-color: #f9f9f9;
+    font-family: Poppins, sans-serif;
+}
+/* Navbar */
+.navbar{
+    margin-top: 20px;
+    align-items: stretch;
+    display: flex;
+    background-color: #ffffff;
+    min-height: 4.25rem;
+    position: relative;
+}
+
+.navbar-items-container{
+    padding: 10px 12.5% 0px 12.5%;
+    align-items: stretch;
+    display: flex;
+}
+
+.cpf-logo-container{
+    align-items: stretch;
+    display: flex;
+    flex-shrink: 0;
+    min-height: 5.25rem;
+    line-height: 20px;
+}
+
+.navbar-menu-items-container{
+    align-items: stretch;
+    display: flex;
+    flex-shrink: 0;
+    min-height: 5.25rem;
+    line-height: 20px;
+    margin-right: -0.75rem;
+    padding: 0px 30px 0px 0px;
+}
+
+.navbar-items{
+    color: #484848;
+    font-weight: 400;
+    font-size: 20px;
+    display: block;
+    line-height: 100%;
+    padding: 25px .75rem .25rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar-link{
+    text-decoration: none;
+    margin-top: 10px;
+    color: #000000;
+}
+
+.navbar-link:hover, .navbar-items:hover{
+    color: rgba(36, 116, 197, 0.904);
+}
+
+.icon{
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1rem;
+    width: 1rem;
+}
