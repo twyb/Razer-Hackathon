@@ -34,42 +34,43 @@ dbtype = credentials["dbType"]
 engine = sa.create_engine(f"{dbtype}://{usrname}:{pwd}@{string}:{port}/{dbname}")
 conn = engine.connect()
 
-problem_table_query = """SELECT * 
-                FROM razer_hackathon.problem_table"""
-
-loans_table_query = """SELECT * 
-                FROM razer_hackathon.loan_details"""
-
-grants_table_query = """SELECT * 
-                FROM razer_hackathon.grant_details"""               
-
-sql_df_problem_result = pd.read_sql_query(problem_table_query, engine)
-sql_df_loans_result = pd.read_sql_query(loans_table_query, engine)
-sql_df_grants_result = pd.read_sql_query(grants_table_query, engine)
-
-json_problem_result = sql_df_problem_result.to_json(orient='index')
-json_loans_result = sql_df_loans_result.to_json(orient='index')
-json_grants_result = sql_df_grants_result.to_json(orient='index')
-
 @app.route('/', methods = ['GET', 'POST'])
 def home():
     # return jsonify({"about": "Hello World!"})
     return "Home Page"
 
-
 @app.route('/loans', methods = ['GET', 'POST'])
+# @app.route('/loans/LoanID', methods = ['GET', 'POST'])
 def loans():
+    form_info = request.json()
+    # print(form_info)
+    loans_table_query = "SELECT * FROM razer_hackathon.loan_details WHERE LoanAmount >= '5000'"
+    
+    sql_df_loans_result = pd.read_sql_query(loans_table_query, engine)
+
+    json_loans_result = sql_df_loans_result.to_json(orient='records')
+
     # return jsonify({"about": "Hello World!"})
     return json_loans_result
 
 @app.route('/problems', methods = ['GET', 'POST'])
 def problems():
-    # return "Hello World! Hey!"    
+    form_info = request.json()
+    problem_table_query = "SELECT * FROM razer_hackathon.problem_table WHERE ProblemIndustry = '?'"
+
+    sql_df_problem_result = pd.read_sql_query(problem_table_query, engine)
+
+    json_problem_result = sql_df_problem_result.to_json(orient='records')
     return json_problem_result
 
 @app.route('/grants', methods = ['GET', 'POST'])
 def grants():
-    # return "Hello World! Hey!"    
+    sql_df_grants_result = pd.read_sql_query(grants_table_query, engine)
+
+    grants_table_query = "SELECT * FROM razer_hackathon.grant_details WHERE GrantIndustry = '?' AND EmployeeCount <= '?'"         
+
+    json_grants_result = sql_df_grants_result.to_json(orient='records')
+
     return json_grants_result
 
 logger = logging.getLogger()
