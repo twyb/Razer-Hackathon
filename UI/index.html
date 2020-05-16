@@ -1,0 +1,37 @@
+<html>
+<head>
+    <link rel = 'stylesheet' href='../CSS/login.css' type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body style = "background-image: url(../Pics/smile.png);">
+    <div class = 'logincontainer'>
+        <div class = 'login'>
+            <form class = 'form'>
+                <h1>Login</h1>
+
+                <div class = 'inputcontainer'>
+                    <input type = 'text' id = 'text' placeholder="Username" class = 'form__field'>
+                    <label for="text" class="form__label">Username</label>
+                </div>
+
+                <div class = 'inputcontainer'>
+                    <input type = 'password' id ='password' placeholder="Password" class = 'form__field'>
+                    <label for="password" class="form__label">Password</label>
+                </div>
+                <div id = '2FAcontainer' class = 'facontainer'></div>
+                <div id ='fasubmit'></div>
+                <div id = 'logincontainer' class = 'submitcontainer'>
+                    <button type = 'button' id = 'login' name = 'submit' class = 'submit' data-hover = 'Welcome!'><div>Login</div></button>    
+                </div>
+                <div id = 'warning' class = 'warning'>
+                </div>
+                <div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src='../JS/login.js'></script>
+</body>
+    
+</html>

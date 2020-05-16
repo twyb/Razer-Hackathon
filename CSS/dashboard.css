@@ -18,7 +18,7 @@
     font-size: 28px;
 }
 
-.problem-button, .problem-submit, .view-proposal, .upload-proposal{
+.problem-button, .problem-submit, .upload-submit, .view-proposal, .upload-proposal{
     color: #494949 !important;
     background: #ffffff;
     padding: 5px 10px 5px 5px;
@@ -146,7 +146,7 @@
     outline: none;
 }
 
-.problem-submit-container{
+.problem-submit-container, .upload-submit-container{
     padding-bottom: 20px;
 }
 
@@ -163,6 +163,7 @@
 .sme-dashboard-item{
     padding: 20px;
     background-color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .sme-first-line, .response-first-line{
@@ -279,4 +280,49 @@
 .poster-info{
     font-size: 16px;
     padding: 0px 0px 10px 0px;
+}
+
+.file-upload-container{
+    display:flex;
+    align-items: stretch;
+    width: 100%;
+    padding: 20px 10px 20px 10px;
+    margin-left: 6.75%;
+}
+
+.proxy-button1{
+    color: #494949 !important;
+    background: #ffffff;
+    padding: 5px 5px 5px 5px;
+    border: 2px solid #494949 !important;
+    display: inline-block;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    width: 150px;
+}
+
+.proxy-button1:hover{
+    color: #ffffff !important;
+    background: #386BF6;
+    border-color: #386BF6 !important;
+    transition: all 0.4s ease 0s;
+    }
+
+.proxy-button1:focus{
+    outline: none;
+}
+
+.slide{
+    /* display: inline-block; */
+    color: #494949 !important;
+    background: #ffffff;
+    padding: 5px 10px 5px 5px;
+    border: 1px solid #494949 !important;
+    /* border-radius: 6px; */
+    /* display: inline-block; */
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    width: 350px;
+    /* float:left; */
+    -webkit-tap-highlight-color: transparent;
 }

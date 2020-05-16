@@ -286,7 +286,8 @@
     width: 400px;
 }
 
-.reply-container.hide{
+.reply-container.hide, .calculator-container.hide,
+.loans-header.hide, .loan-list-container.hide{
     display: none;
 }
 
@@ -339,7 +340,7 @@
     text-align: center;
 }
 
-.calculator-header, .grants-header{
+.calculator-header, .grants-header, .loans-header{
     font-weight: bold;
     letter-spacing: 0;
     line-height: 1.2;
@@ -348,7 +349,7 @@
     /* color: #386BF6; */
 }
 
-.grants-header{
+.grants-header, .loans-header{
     font-size: 28px;
 }
 
@@ -402,7 +403,7 @@
     transition: all 0.4s ease 0s;
     }
 
-.grant-list-container{
+.grant-list-container, .loan-list-container{
     width: 900px;
     display: flex;
     align-items: stretch;
@@ -410,11 +411,11 @@
     margin:auto;
 }
 
-.grants-info-card.selected{
+.grants-info-card.selected, .loans-info-card.selected{
     border: 2px #386BF6 solid;
 }
 
-.grants-info-card{
+.grants-info-card, .loans-info-card{
     width: 300px;
     background-color: #e6edf0;
     padding: 20px;
@@ -422,22 +423,31 @@
     margin-right: 20px;
 }
 
-.grant-logo{
+.grant-logo, .loans-logo{
     width:100%;
 }
 
-.grant-logo>img{
+.grant-logo>img, .loans-logo>img{
     width: 100px;
 }
 
-.grants-title, .grants-amount{
+.grants-title, .grants-amount, .loans-title, .loans-amount{
     font-size:20px;
     font-weight: 400;
     width:100%;
     padding: 10px 0;
 }
 
-.grant-eligibility{
+.grant-eligibility, .loans-eligibility{
     padding: 10px 0;
 }
 
+.grant-url, .loans-url{
+    padding: 10px 10px 0 0;
+    width: 200px;
+    overflow: hidden;
+}
+
+.loans-info-card{
+    margin:auto;
+}

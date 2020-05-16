@@ -9,10 +9,6 @@ with open("images/NRIC_Front.png", "rb") as img_file_1:
     my_string = base64.b64encode(img_file_1.read())
 
 image_string = my_string.decode('utf-8')
-# print(my_string)
-
-# name = razer-group-039
-# token_key = YM1BqxFUcjnY9G6ADuRt
   
 # defining the api-endpoint  
 API_ENDPOINT = "https://niw1itg937.execute-api.ap-southeast-1.amazonaws.com/Prod/verify"

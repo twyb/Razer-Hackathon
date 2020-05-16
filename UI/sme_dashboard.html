@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <div class='sme-dashboard-items-container hide'>
+            <div id='dashboard-list' class='sme-dashboard-items-container hide'>
                 <div class='sme-dashboard-item'>
                     <div class='sme-first-line'>
                         <div class='item-title'>
@@ -79,7 +79,7 @@
                                     PWC
                                 </div>
                                 <div class='response-total'>
-                                    $40000.00
+                                    $400000.00
                                 </div>
                             </div>
                             <div class = 'response-information-container'>
@@ -118,36 +118,45 @@
     
         <!-- Overlay content -->
         <div class="overlay-content">
-            <div class='problem-container'>
-                <div class='problem-header'>
-                    Post your problem
-                </div>
-                <div class='problem-title-container'>
-                    <div class='problem-title-header'>
-                       Problem Title
+                <div class='problem-container'>
+                    <div class='problem-header'>
+                        Post your problem
+                    </div>
+                    <div class='problem-title-container'>
+                        <div class='problem-title-header'>
+                           Problem Title
+                       </div>
+                       <input id='problem-title' type='text' class='problem-title'>
                    </div>
-                   <input type='text' class='problem-title'>
-               </div>
-                <div class='problem-category-container'>
-                    <div class='problem-category-header'>
-                        Problem Category
-                    </div>
-                    <select class='problem-category'>
-
-                    </select>
-                </div>
-                <div class='problem-description-container'>
-                    <div>
-                        <div class='problem-description-header'>
-                            Problem Description
+                    <div class='problem-category-container'>
+                        <div class='problem-category-header'>
+                            Problem Category
                         </div>
-                        <textarea type='text' class='problem-description' cols="40" rows="5"></textarea>
+                        <select id='problem-category' class='problem-category'>
+                            <option value = ''></option>
+                            <option value = 'Human Resource'>Human Resource</option>
+                        </select>
+                    </div>
+                    <div class='problem-description-container'>
+                        <div>
+                            <div class='problem-description-header'>
+                                Problem Description
+                            </div>
+                            <textarea id='problem-description' type='text' class='problem-description' cols="40" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class='file-upload-container'>
+                        <input type='button' id='proxy-button1' class='proxy-button1' value='Upload Files'>
+                        <input type='file' id='compulsory-att' name='compulsory_att' hidden>
+                        <div class='slide'>
+                            <span id='uploaded-compulsory-files' value='none'>Upload Image for Authentication</span>
+                        </div> 
+                    </div>
+
+                    <div class='problem-submit-container'>
+                        <button id='problem-submit' class='problem-submit'>Submit</button>
                     </div>
                 </div>
-                <div class='problem-submit-container'>
-                   <button class='problem-submit'>Submit</button>
-                </div>
-            </div>
         </div>
     
     </div>

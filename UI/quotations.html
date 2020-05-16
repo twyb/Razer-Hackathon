@@ -92,7 +92,7 @@
                                 <span>Subtotal</span>
                             </div>
                             <div class='subtotal-cost-container'>
-                                $41000.00
+                                $400000.00
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                                 <span>24 Days</span>
                             </div>
                             <div class='table-price'>
-                                <span>$38000.00</span>
+                                <span>$220000.00</span>
                             </div>
                         </div>
                         <div class='table-item-container'>
@@ -133,10 +133,10 @@
                                 <span>Consultant</span>
                             </div>
                             <div class='table-quantity'>
-                                <span>4 Hours</span>
+                                <span>24 Days</span>
                             </div>
                             <div class='table-price'>
-                                <span>$1000.00</span>
+                                <span>$100000.00</span>
                             </div>
                         </div>
                         <div class='table-item-container last'>
@@ -147,10 +147,10 @@
                                 <span>Default Rate</span>
                             </div>
                             <div class='table-quantity'>
-                                <span>11 Hours</span>
+                                <span>11 Days</span>
                             </div>
                             <div class='table-price'>
-                                <span>$2000.00</span>
+                                <span>$80000.00</span>
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                         <span>Total Excluding Tax</span>
                     </div>
                     <div class='total-price-before-tax'>
-                        <span>$41000.00</span>
+                        <span>$400000.00</span>
                     </div>
                 </div>
                 <div class='total-price-container'>
@@ -171,7 +171,7 @@
                         <span>Total</span>
                     </div>  
                     <div class='total-price'>
-                        <span>$41000.00</span>
+                        <span>$400000.00</span>
                     </div>
                 </div>
             </div>
@@ -186,7 +186,7 @@
             </div>
         </div>
 
-        <div class='calculator-container'>
+        <div id='calculator' class='calculator-container hide'>
 
             <div class='calculator-header'>
                 Financing your project
@@ -195,43 +195,12 @@
                 <div class='grants-header'>
                     Grants Eligible
                 </div>
-                <div class='grant-list-container'>
-                    <div id='grant-chosen' class='grants-info-card'>
-                        <div class='grant-logo'>
-                            <img src='../Pics/enterprise-singapore-logo-vector.png'>
-                        </div>
-                        <div class='grants-title'>
-                            SkillsFuture Enterprise Credit (SFEC)
-                        </div>
-                        <div id='grant-amount' class='grants-amount' value=10000>
-                            $10000.00
-                        </div>
-                        <div class='grant-eligibility'>
-                            1. Have contributed at least S$750 Skills Development Levy over the period\n\n2. Have employed at least three Singapore Citizens (SCs) or Permanent Residents (PRs) every month over the same period\n\n3.Have not been qualified at any of the earlier periods
-                        </div>
-                        <div class='grant-url'>
-                            <a href='https://www.enterprisesg.gov.sg/financial-assistance/grants/for-local-companies/skillsfuture-enterprise-credit'>https://www.enterprisesg.gov.sg/financial-assistance/grants/for-local-companies/skillsfuture-enterprise-credit</a>
-                        </div>
-                    </div>
+                <div id='grants-list' class='grant-list-container'>
                 </div>
-                <div class = 'loan-list-container'>
-                    <div class='loans-info-card'>
-                        <div class='loans-logo'>
-                            <img src='../Pics/enterprise-singapore-logo-vector.png'>
-                        </div>
-                        <div class='loans-title'>
-                            SkillsFuture Enterprise Credit (SFEC)
-                        </div>
-                        <div class='loans-amount'>
-                            10000
-                        </div>
-                        <div class='loans-eligibility'>
-                            1. Have contributed at least S$750 Skills Development Levy over the period\n\n2. Have employed at least three Singapore Citizens (SCs) or Permanent Residents (PRs) every month over the same period\n\n3.Have not been qualified at any of the earlier periods
-                        </div>
-                        <div class='loans-url'>
-                            <a href='https://www.enterprisesg.gov.sg/financial-assistance/grants/for-local-companies/skillsfuture-enterprise-credit'>https://www.enterprisesg.gov.sg/financial-assistance/grants/for-local-companies/skillsfuture-enterprise-credit</a>
-                        </div>
-                    </div>
+                <div id='loans-header' class='loans-header hide'>
+                    Loans Eligible
+                </div>
+                <div id='loans-list' class = 'loan-list-container hide'>
                 </div>
             </div>
 
@@ -240,8 +209,9 @@
                     <div class='total-price-before-tax-header'>
                         <span>Total Before Reduction</span>
                     </div>
-                    <div id='fixed_balance' value=41000 class='total-price-before-tax'>
-                        <span >$41000.00</span>
+                    <div class='total-price-before-tax'>
+                        <input type=hidden id='fixed_balance' value=400000>
+                        <span>$400000.00</span>
                     </div>
                 </div>
                 <div class='total-price-container'>
@@ -249,7 +219,8 @@
                         <span>Total</span>
                     </div>  
                     <div class='total-price'>
-                        <span id='flexi_balance'>$41000.00</span>
+                        <input id='flexi-balance' type=hidden value=400000>
+                        <span id='flexi-balance-span'>$400000.00</span>
                     </div>
                 </div>
             </div>
