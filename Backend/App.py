@@ -34,29 +34,43 @@ dbtype = credentials["dbType"]
 engine = sa.create_engine(f"{dbtype}://{usrname}:{pwd}@{string}:{port}/{dbname}")
 conn = engine.connect()
 
-
-sql_query = """SELECT * 
+problem_table_query = """SELECT * 
                 FROM razer_hackathon.problem_table"""
 
-sql_df_result = pd.read_sql_query(sql_query, engine)
-# html_result = sql_df_result.to_html()
+loans_table_query = """SELECT * 
+                FROM razer_hackathon.loan_details"""
 
-# json_result = sql_df_result.to_json
-json_result = sql_df_result.to_json(orient='index')
+grants_table_query = """SELECT * 
+                FROM razer_hackathon.grant_details"""               
 
+sql_df_problem_result = pd.read_sql_query(problem_table_query, engine)
+sql_df_loans_result = pd.read_sql_query(loans_table_query, engine)
+sql_df_grants_result = pd.read_sql_query(grants_table_query, engine)
 
-# application.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://{master username}:{db password}@{endpoint}/{db instance name}'
-# db = SQLAlchemy(application)
+json_problem_result = sql_df_problem_result.to_json(orient='index')
+json_loans_result = sql_df_loans_result.to_json(orient='index')
+json_grants_result = sql_df_grants_result.to_json(orient='index')
+
+@app.route('/', methods = ['GET', 'POST'])
+def home():
+    # return jsonify({"about": "Hello World!"})
+    return "Home Page"
+
 
 @app.route('/loans', methods = ['GET', 'POST'])
 def loans():
-    # return "Hello World! Hey!"
-    return jsonify({"about": "Hello World!"})
+    # return jsonify({"about": "Hello World!"})
+    return json_loans_result
 
 @app.route('/problems', methods = ['GET', 'POST'])
 def problems():
     # return "Hello World! Hey!"    
-    return json_result
+    return json_problem_result
+
+@app.route('/grants', methods = ['GET', 'POST'])
+def grants():
+    # return "Hello World! Hey!"    
+    return json_grants_result
 
 logger = logging.getLogger()
 handler = logging.StreamHandler()
