@@ -1,28 +1,282 @@
-.card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px; /* 5px rounded corners */
+.main-body-container{
+    margin: 5% 5% 0px 12.5%;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
 }
 
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+.dashboard-top{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
+    padding: 20px;
 }
 
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
+.dashboard-header{
+    font-size: 28px;
 }
 
-.card-container{
-    width: 300px;
-    height: 300px;
-
+.problem-button, .problem-submit, .view-proposal, .upload-proposal{
+    color: #494949 !important;
+    background: #ffffff;
+    padding: 5px 10px 5px 5px;
+    border: 2px solid #494949 !important;
+    border-radius: 6px;
+    /* display: inline-block; */
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    width: 150px;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.main-container{
-    display: block;
+.problem-button:hover, .problem-submit:hover, .view-proposal:hover,
+.upload-proposal:hover {
+    color: #ffffff !important;
+    background: #386BF6;
+    border-color: #386BF6 !important;
+    transition: all 0.4s ease 0s;
+    }
+
+.problem-button:focus, .problem-submit:focus, .view-proposal:focus,
+.upload-proposal:focus, .accept:focus, .reject:focus{
+        outline:none;
+    }
+
+/* The Overlay (background) */
+.overlay{
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+
+  .overlay.hide{
+      display: none;
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+.problem-container{
+    background-color: #e6edf0;
+    width: 600px;
+    margin:auto;
+    border-radius: 10px;
+}
+
+.problem-header{
+    font-size: 28px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.problem-category-container, .problem-title-container, .problem-description-container{
+    padding: 10px;
+}
+
+.problem-category-header, .problem-title-header, .problem-description-header{
+    font-size: 16px;
+    padding-left: 40px;
+    text-align: left;
+}
+
+.problem-category, .problem-title, .problem-description{
+    color: #494949 !important;
+    background: #ffffff;
+    padding: 5px 10px 5px 5px;
+    border: 2px solid #494949 !important;
+    border-radius: 6px;
+    /* display: inline-block; */
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    width: 500px;
+    /* float:left; */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.problem-category:focus, .problem-title:focus, .problem-description:focus{
+    outline: none;
+}
+
+.problem-submit-container{
+    padding-bottom: 20px;
+}
+
+.sme-dashboard-items-container{
+    background-color: #e6edf0;
+    padding: 20px;
+    margin: 0px 30px 20px;
+}
+
+.response-item-container.hide{
+    display: none;
+}
+
+.sme-dashboard-item{
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.sme-first-line, .response-first-line{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.item-title{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#show-more, #show-less{
+    cursor: pointer;
+}
+
+.item-tag-container{
+    display: flex;
+    width: 170px;
+    background-color: #386BF6;
+    border-radius: 10px;
+    margin: 5px 0 10px;
+    border: 2px black solid;
+}
+
+.item-tag{
+    padding: 0px 17.5px;
+    font-weight: bold;
+}
+
+.fa.fa-close.hide, .fa.fa-sort-desc.hide{
+    display: none;
+}
+
+.response-item-container{
+    margin: 10px 20px;
+}
+
+.response-item{
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.response-header{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 14px;
+}
+
+.response-total{
+    font-size: 24px;
+    line-height: 14px;
+    letter-spacing: 1px;
+    color: #242C39;
+}
+
+.response-description-container{
+    padding: 10px 0;
+}
+
+.many-buttons-container{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.decision-container{
+    display: flex;
+    align-items: stretch;
+    width: 350px;
+    justify-content: space-between;
+}
+
+.accept {
+    color: #494949 !important;
+    background: #ffffff;
+    padding: 5px 10px 5px 5px;
+    border: 2px solid #494949 !important;
+    border-radius: 6px;
+    /* display: inline-block; */
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    width: 150px;
+    -webkit-tap-highlight-color: transparent;
+}
+.accept:hover {
+    color: #ffffff !important;
+    background: rgb(81, 228, 106);
+    border-color: rgb(81, 228, 106) !important;
+    transition: all 0.4s ease 0s;
+    }
+
+.reject {
+    float: right;
+    color: #494949 !important;
+    background: #ffffff;
+    padding: 5px 10px 5px 5px;
+    border: 2px solid #494949 !important;
+    border-radius: 6px;
+    /* display: inline-block; */
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    width: 150px;
+    -webkit-tap-highlight-color: transparent;
+}
+.reject:hover {
+    color: #ffffff !important;
+    background: red;
+    border-color: red !important;
+    transition: all 0.4s ease 0s;
+    }
+
+.poster-info{
+    font-size: 16px;
+    padding: 0px 0px 10px 0px;
 }
